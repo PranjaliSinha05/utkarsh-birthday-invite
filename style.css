@@ -9,13 +9,23 @@
     box-sizing: border-box;
 }
 
+html {
+    min-height: 100%;
+}
+
 body {
     min-height: 100vh;
+    min-height: 100dvh;
     font-family: Arial, sans-serif;
     background: #050814;
     color: white;
-    overflow: hidden;
+
+    /* IMPORTANT:
+       Allows tall pages to scroll */
+    overflow-x: hidden;
+    overflow-y: auto;
 }
+
 
 /* =====================================
    PAGE SYSTEM
@@ -24,26 +34,30 @@ body {
 .page {
     display: none;
 
-    min-height: 100vh;
     width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
 
     position: relative;
 
     align-items: center;
     justify-content: center;
 
-    padding: 30px;
+    padding: 35px 30px;
 
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 
-    overflow: hidden;
+    /* IMPORTANT:
+       Page can become taller than screen */
+    overflow: visible;
 }
 
 .page.active {
     display: flex;
 }
+
 
 /* =====================================
    ANIME BACKGROUNDS
@@ -85,6 +99,7 @@ body {
     background-image: url("images/animebg8.jpeg.png");
 }
 
+
 /* =====================================
    BACKGROUND OVERLAY
 ===================================== */
@@ -93,15 +108,14 @@ body {
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     background:
         linear-gradient(
             90deg,
-            rgba(3, 7, 20, 0.80),
+            rgba(3, 7, 20, 0.82),
             rgba(5, 10, 25, 0.48),
-            rgba(3, 7, 20, 0.80)
+            rgba(3, 7, 20, 0.82)
         );
 
     z-index: 0;
@@ -111,7 +125,6 @@ body {
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     background:
@@ -122,12 +135,12 @@ body {
         );
 
     pointer-events: none;
-
     z-index: 0;
 }
 
+
 /* =====================================
-   CONTENT
+   MAIN CONTENT CARD
 ===================================== */
 
 .content {
@@ -140,13 +153,11 @@ body {
     background:
         linear-gradient(
             145deg,
-            rgba(8, 15, 38, 0.94),
-            rgba(10, 18, 42, 0.84)
+            rgba(8, 15, 38, 0.95),
+            rgba(10, 18, 42, 0.88)
         );
 
-    border:
-        2px solid rgba(255, 207, 112, 0.55);
-
+    border: 2px solid rgba(255, 207, 112, 0.55);
     border-radius: 24px;
 
     box-shadow:
@@ -154,43 +165,41 @@ body {
         0 0 60px rgba(255, 190, 70, 0.10);
 
     position: relative;
-
     z-index: 2;
 
     backdrop-filter: blur(5px);
+
+    /* IMPORTANT */
+    max-height: none;
+    overflow: visible;
 }
 
 .content::before {
     content: "✦";
 
     position: absolute;
-
     top: 12px;
     left: 18px;
 
     color: #6ee7ff;
-
     font-size: 20px;
 
-    text-shadow:
-        0 0 12px #6ee7ff;
+    text-shadow: 0 0 12px #6ee7ff;
 }
 
 .content::after {
     content: "✦";
 
     position: absolute;
-
     bottom: 12px;
     right: 18px;
 
     color: #ffcf70;
-
     font-size: 20px;
 
-    text-shadow:
-        0 0 12px #ffcf70;
+    text-shadow: 0 0 12px #ffcf70;
 }
+
 
 /* =====================================
    TEXT
@@ -200,11 +209,9 @@ body {
     color: #6ee7ff;
 
     font-size: 13px;
-
     font-weight: bold;
 
     letter-spacing: 3px;
-
     margin-bottom: 18px;
 
     text-shadow:
@@ -215,7 +222,6 @@ h1 {
     color: #ffcf70;
 
     font-size: clamp(34px, 5vw, 62px);
-
     line-height: 1.05;
 
     margin-bottom: 12px;
@@ -229,6 +235,7 @@ h2 {
     color: white;
 
     font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.15;
 
     margin-bottom: 18px;
 }
@@ -241,13 +248,11 @@ h2 {
 .logout-text,
 .final-message {
     color: #d9e2ff;
-
     line-height: 1.6;
 }
 
 .message {
     font-size: 18px;
-
     margin-bottom: 25px;
 }
 
@@ -261,8 +266,9 @@ h2 {
     color: #b9c7ef;
 }
 
+
 /* =====================================
-   UTKARSH PHOTOS
+   UTKARSH SIDE PHOTOS
 ===================================== */
 
 .side-photo {
@@ -281,7 +287,6 @@ h2 {
         );
 
     border: 2px solid #ffbf4a;
-
     border-radius: 24px;
 
     box-shadow:
@@ -292,6 +297,9 @@ h2 {
 
     z-index: 1;
 
+    top: 50%;
+    transform: translateY(-50%) rotate(-5deg);
+
     transition: 0.35s ease;
 }
 
@@ -299,16 +307,12 @@ h2 {
     content: "";
 
     position: absolute;
-
     inset: 5px;
 
-    border:
-        1px solid rgba(110, 231, 255, 0.35);
-
+    border: 1px solid rgba(110, 231, 255, 0.35);
     border-radius: 18px;
 
     pointer-events: none;
-
     z-index: 2;
 }
 
@@ -319,7 +323,6 @@ h2 {
     height: 100%;
 
     object-fit: cover;
-
     object-position: center;
 
     border-radius: 15px;
@@ -327,20 +330,18 @@ h2 {
 
 .left-photo {
     left: 0.3%;
-
-    transform: rotate(-5deg);
+    transform: translateY(-50%) rotate(-5deg);
 }
 
 .right-photo {
     right: 0.3%;
-
-    transform: rotate(5deg);
+    transform: translateY(-50%) rotate(5deg);
 }
 
 .left-photo:hover {
     transform:
+        translateY(-50%)
         rotate(-2deg)
-        translateY(-8px)
         scale(1.02);
 
     box-shadow:
@@ -350,8 +351,8 @@ h2 {
 
 .right-photo:hover {
     transform:
+        translateY(-50%)
         rotate(2deg)
-        translateY(-8px)
         scale(1.02);
 
     box-shadow:
@@ -368,24 +369,20 @@ h2 {
 
     padding: 10px;
 
-    background:
-        rgba(4, 8, 22, 0.92);
+    background: rgba(4, 8, 22, 0.92);
 
-    border:
-        1px solid rgba(255, 207, 112, 0.5);
-
+    border: 1px solid rgba(255, 207, 112, 0.5);
     border-radius: 9px;
 
     color: #ffcf70;
 
     font-size: 12px;
-
     font-weight: bold;
-
     letter-spacing: 1px;
 
     z-index: 3;
 }
+
 
 /* =====================================
    PAGE 1
@@ -393,17 +390,16 @@ h2 {
 
 .birthday-content {
     width: 560px;
-
     padding: 45px 35px;
 }
 
 .birthday-icon {
     font-size: 75px;
-
     margin: 20px 0;
 
     animation: bounce 1.5s infinite;
 }
+
 
 /* =====================================
    BUTTONS
@@ -415,7 +411,6 @@ button {
     cursor: pointer;
 
     font-weight: bold;
-
     letter-spacing: 1px;
 
     transition: 0.25s ease;
@@ -435,11 +430,14 @@ button {
         );
 
     color: #101629;
-
     font-size: 14px;
 
     box-shadow:
         0 0 15px rgba(255, 207, 112, 0.3);
+
+    /* Make sure button remains visible */
+    position: relative;
+    z-index: 5;
 }
 
 .next-btn:hover,
@@ -497,6 +495,7 @@ button {
     color: white;
 }
 
+
 /* =====================================
    FUNNY MESSAGE
 ===================================== */
@@ -510,6 +509,7 @@ button {
 
     font-weight: bold;
 }
+
 
 /* =====================================
    FRIENDS
@@ -556,7 +556,6 @@ button {
 
 .friend-card img {
     width: 100%;
-
     height: 125px;
 
     object-fit: cover;
@@ -570,9 +569,9 @@ button {
     color: #ffcf70;
 
     font-weight: bold;
-
     font-size: 13px;
 }
+
 
 /* =====================================
    DETAILS
@@ -635,9 +634,9 @@ button {
 
 .secret-message {
     margin: 20px 0;
-
     color: #ffcf70;
 }
+
 
 /* =====================================
    WARNING
@@ -672,7 +671,6 @@ button {
 
 .warning-card h2 {
     font-size: 24px;
-
     color: #ff6b6b;
 }
 
@@ -680,19 +678,18 @@ button {
     margin: 15px 0;
 
     font-size: 18px;
-
     line-height: 1.6;
 }
 
 .warning-card h3 {
     color: #ffcf70;
-
     line-height: 1.5;
 }
 
 .warning-footer {
     margin-bottom: 20px;
 }
+
 
 /* =====================================
    PAGE 6
@@ -712,12 +709,12 @@ button {
     color: #ffcf70;
 
     font-size: 24px;
-
     font-weight: bold;
 }
 
+
 /* =====================================
-   RESULT
+   PAGE 7 RESULT
 ===================================== */
 
 .result-card {
@@ -757,7 +754,6 @@ button {
 
 .result-card span {
     color: #55e6a8;
-
     font-weight: bold;
 }
 
@@ -776,6 +772,7 @@ button {
 .logout-text {
     margin-bottom: 20px;
 }
+
 
 /* =====================================
    PAGE 8 - FEEDBACK
@@ -903,6 +900,7 @@ button {
     margin: 10px 0 15px;
 }
 
+
 /* =====================================
    FINAL PAGE
 ===================================== */
@@ -936,6 +934,7 @@ button {
     font-weight: bold;
 }
 
+
 /* =====================================
    CONFETTI
 ===================================== */
@@ -958,7 +957,6 @@ button {
     top: -15px;
 
     width: 9px;
-
     height: 16px;
 
     border-radius: 2px;
@@ -985,6 +983,7 @@ button {
     }
 }
 
+
 /* =====================================
    ANIMATIONS
 ===================================== */
@@ -1001,6 +1000,7 @@ button {
     }
 }
 
+
 /* =====================================
    TABLET
 ===================================== */
@@ -1008,9 +1008,8 @@ button {
 @media (max-width: 1200px) {
 
     .side-photo {
-        width: 300px;
-
-        height: 460px;
+        width: 270px;
+        height: 430px;
     }
 
     .birthday-content {
@@ -1018,9 +1017,33 @@ button {
     }
 
     .content {
-        width: min(760px, 75vw);
+        width: min(760px, 70vw);
     }
 }
+
+
+/* =====================================
+   IMPORTANT:
+   SMALLER LAPTOP / TABLET
+===================================== */
+
+@media (max-width: 1050px) {
+
+    .side-photo {
+        width: 210px;
+        height: 340px;
+    }
+
+    .content {
+        width: min(700px, 68vw);
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: clamp(32px, 4.5vw, 50px);
+    }
+}
+
 
 /* =====================================
    MOBILE
@@ -1029,59 +1052,64 @@ button {
 @media (max-width: 850px) {
 
     body {
+        overflow-x: hidden;
         overflow-y: auto;
     }
 
     .page {
         min-height: 100vh;
+        min-height: 100dvh;
 
-        padding: 20px;
+        padding: 25px 15px;
 
         flex-wrap: wrap;
 
-        gap: 5px;
+        gap: 10px;
 
-        overflow-y: auto;
+        /* Allow full page scrolling */
+        overflow: visible;
+
+        align-content: center;
     }
 
     .content {
         width: 95vw;
 
         padding: 30px 20px;
+
+        order: 2;
     }
 
     .side-photo {
         position: relative;
 
+        top: auto;
+
         left: auto;
         right: auto;
 
         width: 105px;
-
         height: 145px;
 
         margin: 5px;
+
+        transform: rotate(-3deg);
     }
 
-    .left-photo,
-    .right-photo {
+    .left-photo {
+        order: 1;
+
         transform: rotate(-3deg);
+    }
+
+    .right-photo {
+        order: 3;
+
+        transform: rotate(3deg);
     }
 
     .birthday-content {
         width: 95vw;
-    }
-
-    #page1 .content {
-        order: 2;
-    }
-
-    #page1 .left-photo {
-        order: 1;
-    }
-
-    #page1 .right-photo {
-        order: 3;
     }
 
     .photo-caption {
@@ -1113,13 +1141,28 @@ button {
 
         text-align: left;
     }
+
+    /* Page 7 specifically */
+    #page7 .content {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }
+
 
 /* =====================================
    SMALL MOBILE
 ===================================== */
 
 @media (max-width: 500px) {
+
+    .page {
+        padding: 20px 10px;
+    }
+
+    .content {
+        padding: 25px 16px;
+    }
 
     h1 {
         font-size: 34px;
@@ -1147,11 +1190,40 @@ button {
 
     .side-photo {
         width: 90px;
-
         height: 125px;
     }
 
     .feedback-input {
         min-height: 85px;
+    }
+
+    .next-btn,
+    .logout-btn {
+        padding: 13px 22px;
+    }
+}
+
+
+/* =====================================
+   VERY SHORT LAPTOP SCREEN
+   Prevents buttons from being cut
+===================================== */
+
+@media (min-width: 851px) and (max-height: 750px) {
+
+    .page {
+        align-items: flex-start;
+
+        padding-top: 25px;
+        padding-bottom: 40px;
+    }
+
+    .content {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .side-photo {
+        top: 50%;
     }
 }
