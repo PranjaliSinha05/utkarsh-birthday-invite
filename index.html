@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Utkarsh — Birthday Mission</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="confetti-container"></div>
+
+
+    <!-- PAGE 1 : BIRTHDAY -->
+    <section class="page active" id="page1">
+
+        <div class="side-photo left-photo">
+            <img src="images/utkarsh1.jpeg" alt="Utkarsh">
+            <div class="photo-caption">BIRTHDAY BOY 🔥</div>
+        </div>
+
+        <div class="content birthday-content">
+
+            <p class="small-title">
+                A NEW CHAPTER BEGINS...
+            </p>
+
+            <h1>HAPPY BIRTHDAY</h1>
+
+            <h2>UTKARSH!!!</h2>
+
+            <p class="subtitle">
+                Same guy. Same chaos.
+                Higher levels ahead. 🔥
+            </p>
+
+            <div class="birthday-icon">
+                🎂
+            </div>
+
+            <button class="next-btn" onclick="nextPage()">
+                START THE JOURNEY →
+            </button>
+
+        </div>
+
+        <div class="side-photo right-photo">
+            <img src="images/utkarsh3.jpeg" alt="Utkarsh">
+            <div class="photo-caption">GOOD VIBES ONLY 😎</div>
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 2 : FRIENDS -->
+    <section class="page" id="page2">
+
+        <div class="side-photo left-photo">
+            <img src="images/utkarsh2.jpeg" alt="Utkarsh">
+            <div class="photo-caption">THE BIRTHDAY BOY 🔥</div>
+        </div>
+
+        <div class="content">
+
+            <p class="small-title">
+                THE PEOPLE BEHIND THIS MISSION
+            </p>
+
+            <h1>HEY BROOO! 👋</h1>
+
+            <p class="message">
+                You are officially invited to your
+                <strong>BD PARTY</strong> by us!
+            </p>
+
+            <div class="crew">
+
+                <div class="friend-card">
+                    <img src="images/rishika.jpeg" alt="Rishika">
+                    <p>Rishika</p>
+                </div>
+
+                <div class="friend-card">
+                    <img src="images/prajwalit.jpeg" alt="Prajwalit">
+                    <p>Prajwalit</p>
+                </div>
+
+                <div class="friend-card">
+                    <img src="images/vikram.jpeg" alt="Vikram">
+                    <p>Vikram</p>
+                </div>
+
+                <div class="friend-card">
+                    <img src="images/yash.jpeg" alt="Yash">
+                    <p>Yash</p>
+                </div>
+
+                <div class="friend-card">
+                    <img src="images/pranjali.jpeg" alt="Pranjali">
+                    <p>Pranjali</p>
+                </div>
+
+            </div>
+
+            <p class="quote">
+                "Good friends are like a village —
+                no matter where life takes us,
+                we always find our way back."
+            </p>
+
+            <button class="next-btn" onclick="nextPage()">
+                NEXT →
+            </button>
+
+        </div>
+
+        <div class="side-photo right-photo">
+            <img src="images/utkarsh4.jpeg" alt="Utkarsh">
+            <div class="photo-caption">BROOO 😎</div>
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 3 : JOIN US -->
+    <section class="page" id="page3">
+
+        <div class="side-photo left-photo">
+            <img src="images/utkarsh3.jpeg" alt="Utkarsh">
+            <div class="photo-caption">MISSION QUESTION 👀</div>
+        </div>
+
+        <div class="content">
+
+            <p class="small-title">
+                MISSION QUESTION 01
+            </p>
+
+            <h1>WILL YOU JOIN US?</h1>
+
+            <p class="message">
+                Will you join us on your special day? 👀
+            </p>
+
+            <div class="choice-buttons">
+
+                <button class="yes-btn" onclick="joinYes()">
+                    YES 😎
+                </button>
+
+                <button
+                    class="no-btn"
+                    id="noJoinBtn"
+                    onclick="noJoinAttempt()">
+                    NO ❌
+                </button>
+
+            </div>
+
+            <p id="join-message" class="funny-message"></p>
+
+        </div>
+
+        <div class="side-photo right-photo">
+            <img src="images/utkarsh2.jpeg" alt="Utkarsh">
+            <div class="photo-caption">NO ESCAPE 😂</div>
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 4 : DETAILS -->
+    <section class="page" id="page4">
+
+        <div class="side-photo left-photo">
+            <img src="images/utkarsh4.jpeg" alt="Utkarsh">
+            <div class="photo-caption">CLASSIFIED 👀</div>
+        </div>
+
+        <div class="content">
+
+            <p class="small-title">
+                MISSION DETAILS
+            </p>
+
+            <h1>ALRIGHT BHAI 👀</h1>
+
+            <p class="message">
+                Here are the classified details...
+            </p>
+
+            <div class="details-card">
+
+                <div class="detail">
+                    <span>📅</span>
+                    <div>
+                        <small>DATE</small>
+                        <strong>16 SEPTEMBER 2026</strong>
+                    </div>
+                </div>
+
+                <div class="detail">
+                    <span>⏰</span>
+                    <div>
+                        <small>TIME</small>
+                        <strong>12:00 PM</strong>
+                    </div>
+                </div>
+
+                <div class="detail">
+                    <span>📍</span>
+                    <div>
+                        <small>VENUE</small>
+                        <strong>CLA 19</strong>
+                    </div>
+                </div>
+
+            </div>
+
+            <p class="secret-message">
+                That's all you're allowed to know for now... 🤫
+            </p>
+
+            <button class="next-btn" onclick="nextPage()">
+                NEXT →
+            </button>
+
+        </div>
+
+        <div class="side-photo right-photo">
+            <img src="images/utkarsh1.jpeg" alt="Utkarsh">
+            <div class="photo-caption">MISSION TARGET 🔥</div>
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 5 : DRESS CODE -->
+    <section class="page" id="page5">
+
+        <div class="side-photo left-photo">
+            <img src="images/utkarsh2.jpeg" alt="Utkarsh">
+            <div class="photo-caption">LOOK SHARP 😎</div>
+        </div>
+
+        <div class="content warning-page">
+
+            <div class="warning-icon">
+                ⚠️
+            </div>
+
+            <p class="small-title">
+                IMPORTANT MISSION WARNING
+            </p>
+
+            <h1>DRESS CODE ALERT</h1>
+
+            <div class="warning-card">
+
+                <h2>
+                    ⚠️ LISTEN CAREFULLY BRO ⚠️
+                </h2>
+
+                <p>
+                    DO WEAR YOUR
+                    <strong>BEST</strong>
+                    TOMORROW. 😎
+                </p>
+
+                <p>
+                    Roz ke labour wale kapde mein aaye...
+                </p>
+
+                <h3>
+                    TO APNI HI PARTY SE
+                    NIKAAL DIYE JAOGE 💀
+                </h3>
+
+            </div>
+
+            <p class="warning-footer">
+                Don't say we didn't warn you. 😂
+            </p>
+
+            <button class="next-btn" onclick="nextPage()">
+                I UNDERSTAND →
+            </button>
+
+        </div>
+
+        <div class="side-photo right-photo">
+            <img src="images/utkarsh3.jpeg" alt="Utkarsh">
+            <div class="photo-caption">DRESS WELL BRO 💀</div>
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 6 : EXCITEMENT -->
+    <section class="page" id="page6">
+
+        <div class="side-photo left-photo">
+            <img src="images/utkarsh1.jpeg" alt="Utkarsh">
+            <div class="photo-caption">SABKA BHAI 🔥</div>
+        </div>
+
+        <div class="content">
+
+            <p class="small-title">
+                FINAL ASSESSMENT QUESTION
+            </p>
+
+            <h1>SOOOOO...</h1>
+
+            <h2 class="big-question">
+                ARE YOU EXCITED FOR TOMORROW,
+                BHAAAAAIIIIII? 🔥
+            </h2>
+
+            <p class="message">
+                SABKA BHAIIIIIII??? 😎
+            </p>
+
+            <div class="choice-buttons">
+
+                <button class="yes-btn" onclick="excitedYes()">
+                    YESSS 🔥
+                </button>
+
+                <button
+                    class="no-btn"
+                    id="noExcitedBtn"
+                    onclick="noExcitedAttempt()">
+                    NO ❌
+                </button>
+
+            </div>
+
+            <p id="excited-message" class="funny-message"></p>
+
+        </div>
+
+        <div class="side-photo right-photo">
+            <img src="images/utkarsh4.jpeg" alt="Utkarsh">
+            <div class="photo-caption">ARE YOU READY? 🔥</div>
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 7 : ASSESSMENT RESULT -->
+    <section class="page" id="page7">
+
+        <div class="side-photo left-photo">
+            <img src="images/utkarsh3.jpeg" alt="Utkarsh">
+            <div class="photo-caption">ASSESSMENT PASSED 🏆</div>
+        </div>
+
+        <div class="content">
+
+            <div class="success-icon">
+                🎓
+            </div>
+
+            <p class="small-title">
+                ASSESSMENT RESULT
+            </p>
+
+            <h1>
+                CONGRATULATIONS BRO!
+            </h1>
+
+            <div class="result-card">
+
+                <p>
+                    Attendance
+                    <span>✅ CONFIRMED</span>
+                </p>
+
+                <p>
+                    Bro Verification
+                    <span>✅ COMPLETE</span>
+                </p>
+
+                <p>
+                    Excitement Level
+                    <span>🔥 ACCEPTABLE</span>
+                </p>
+
+                <p>
+                    Escape Probability
+                    <span>❌ 0%</span>
+                </p>
+
+            </div>
+
+            <h2 class="passed">
+                YOU HAVE SUCCESSFULLY
+                PASSED OUR ASSESSMENT! 🏆
+            </h2>
+
+            <p class="message">
+                Thank you for filling our survey form.
+            </p>
+
+            <p class="logout-text">
+                You may now log out.
+            </p>
+
+            <button class="logout-btn" onclick="logout()">
+                LOG OUT 🚪
+            </button>
+
+        </div>
+
+        <div class="side-photo right-photo">
+            <img src="images/utkarsh4.jpeg" alt="Utkarsh">
+            <div class="photo-caption">MISSION COMPLETE 🔥</div>
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 8 : FEEDBACK -->
+    <section class="page" id="page8">
+
+        <div class="side-photo left-photo">
+            <img src="images/utkarsh2.jpeg" alt="Utkarsh">
+            <div class="photo-caption">YOUR FEEDBACK? 👀</div>
+        </div>
+
+        <div class="content feedback-page">
+
+            <p class="small-title">
+                FINAL FEEDBACK
+            </p>
+
+            <h1>
+                DID YOU LIKE THIS WEBSITE?
+            </h1>
+
+            <p class="message">
+                Be honest bro... 👀
+            </p>
+
+            <div class="rating-options">
+
+                <button
+                    class="rating-btn"
+                    onclick="selectRating(this, 'Excellent')">
+                    EXCELLENT
+                </button>
+
+                <button
+                    class="rating-btn"
+                    onclick="selectRating(this, 'Very Good')">
+                    VERY GOOD
+                </button>
+
+                <button
+                    class="rating-btn"
+                    onclick="selectRating(this, 'Good')">
+                    GOOD
+                </button>
+
+                <button
+                    class="rating-btn"
+                    onclick="selectRating(this, 'Avg')">
+                    AVG
+                </button>
+
+                <button
+                    class="rating-btn"
+                    onclick="selectRating(this, 'Poor')">
+                    POOR
+                </button>
+
+            </div>
+
+            <p class="feedback-question">
+                WHAT DID YOU LIKE THE MOST
+                ABOUT THE WEBSITE?
+            </p>
+
+            <textarea
+                id="feedbackText"
+                class="feedback-input"
+                placeholder="Type your answer here..."></textarea>
+
+            <p
+                id="feedback-message"
+                class="funny-message">
+            </p>
+
+            <button
+                class="next-btn"
+                onclick="submitFeedback()">
+                SUBMIT FEEDBACK →
+            </button>
+
+        </div>
+
+        <div class="side-photo right-photo">
+            <img src="images/utkarsh1.jpeg" alt="Utkarsh">
+            <div class="photo-caption">THANK YOU BRO ❤️</div>
+        </div>
+
+    </section>
+
+
+    <!-- FINAL SCREEN -->
+    <section class="page final-page" id="finalPage">
+
+        <div class="side-photo left-photo">
+            <img src="images/utkarsh1.jpeg" alt="Utkarsh">
+            <div class="photo-caption">HAPPY BIRTHDAY ❤️</div>
+        </div>
+
+        <div class="content">
+
+            <div class="final-confetti">
+                🎊
+            </div>
+
+            <h1>
+                MISSION COMPLETE!
+            </h1>
+
+            <h2>
+                HAPPY BIRTHDAY UTKARSH! ❤️
+            </h2>
+
+            <p class="message">
+                From your favourite idiots —
+                Rishika, Prajwalit, Vikram, Yash & Pranjali 😎
+            </p>
+
+            <p class="final-message">
+                See you tomorrow, birthday boy. 👀🔥
+            </p>
+
+        </div>
+
+        <div class="side-photo right-photo">
+            <img src="images/utkarsh3.jpeg" alt="Utkarsh">
+            <div class="photo-caption">BIRTHDAY BOY 🔥</div>
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
